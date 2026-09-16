@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        p{
-            color: orange;
-            border: solid 1px black;
-        }
-    </style>
     <head>
+        <style>
+        input{
+            width: 175px;
+        }
+        p{
+            border: solid 0px white;
+        }
+        </style>
+
         <h2>Customize webpage</h2>
     </head>
     <body>
-        <input type="number" id="red" min="0" max="255">
-        <input type="number" id="green" min="0" max="255">
-        <input type="number" id="blue" min="0" max="255">
+        <p id="change">Change this sentence.</p>
+        <label>Border R(0-255): </label><input type="number" id="borderred" min="0" max="255"><br>
+        <label>Border G(0-255): </label><input type="number" id="bordergreen" min="0" max="255"><br>
+        <label>Border B(0-255): </label><input type="number" id="borderblue" min="0" max="255"><br>
+        <label>Border Width: </label><input type="number" id="width" min="0"><br>
+        <label>Text Color R(0-255): </label><input type="number" id="red" min="0" max="255"><br>
+        <label>Text Color G(0-255): </label><input type="number" id="green" min="0" max="255"><br>
+        <label>Text Color B(0-255): </label><input type="number" id="blue" min="0" max="255"><br>
 
         <button onclick="changeColor()">Change Color</button>
 
-        <p id="text">Hello World</p>
 
         <script>
             function changeColor() {
-                let red = document.getElementById("red").value;
-                let green = document.getElementById("green").value;
-                let blue = document.getElementById("blue").value;
+                var red = document.getElementById("red").value;
+                var green = document.getElementById("green").value;
+                var blue = document.getElementById("blue").value;
+                var width = document.getElementById("width").value;
+                var borderred = document.getElementById("borderred").value;
+                var bordergreen = document.getElementById("bordergreen").value;
+                var borderblue = document.getElementById("borderblue").value;
 
-                document.getElementById("text").style.color =
+                document.getElementById("change").style.borderWidth =
+                    `${width}px`;
+                document.getElementById("change").style.color = 
                     `rgb(${red}, ${green}, ${blue})`;
+                document.getElementById("change").style.borderColor =
+                    `rgb(${borderred}, ${bordergreen}, ${borderblue})`;
             }
         </script>
     </body>
