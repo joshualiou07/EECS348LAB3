@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validatePassword () {
+                var password1 = document.getElementById("password1").value;
+                var password2 = document.getElementById("password2").value;
+
+                if (password1.length < 8){
+                    alert("Enter a password with atleast 8 characters");
+                }
+                else if (password1 != password2){
+                    alert("Passwords do not match");
+                }
+                else {
+                    alert("Everything is OK");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>EECS 348 Lab Three Practice Six</h1>
+        <label>First Password: </label><input type="text" id="password1">
+        <br>
+        <label>Second Password: </label><input type="text" id="password2">
+        <br>
+        <button onclick="validatePassword()">Validate Your Passwords</button>
+    </body>
+</html>
